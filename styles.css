@@ -1,0 +1,262 @@
+/* Variables */
+:root {
+    --primary-color: #4361ee;
+    --secondary-color: #3f37c9;
+    --accent-color: #4895ef;
+    --success-color: #4cc9f0;
+    --text-light: #f8f9fa;
+    --text-dark: #212529;
+    --text-muted: #6c757d;
+    --border-color: #dee2e6;
+    --bg-light: #fbfcfc;
+    --spacing-base: 1rem;
+}
+
+/* Reset & Base Styles */
+* {
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "segoe ui", roboto, oxygen, ubuntu, cantarell, "fira sans", "droid sans", "helvetica neue", Arial, sans-serif;
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    background-color: #FFFFFF;
+    margin: 0;
+}
+
+/* Layout */
+.content {
+    width: 75%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    resize: both;
+}
+
+/* Navigation */
+.navtop {
+    background-color: var(--primary-color);
+    height: 60px;
+    width: 100%;
+    border: 0;
+}
+
+.navtop div {
+    display: flex;
+    margin: 0 auto;
+    width: 1000px;
+    height: 100%;
+}
+
+.navtop div h1 {
+    flex: 1;
+    font-size: 24px;
+    color: var(--text-light);
+    margin: 0;
+}
+
+.navtop div a {
+    padding: 0 20px;
+    color: #c5d2e5;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.navtop div a:hover {
+    color: var(--text-light);
+}
+
+/* Hero Section */
+.hero-section {
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    padding: 6rem 0;
+    margin-bottom: 4rem;
+    border-radius: 0 0 50px 50px;
+    text-align: center;
+}
+
+.hero-section h1 {
+    color: white;
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+}
+
+.hero-section p {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+}
+
+/* Buttons */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem 1.5rem;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    min-width: 200px;
+    font-weight: 500;
+}
+
+.btn-primary {
+    background: var(--primary-color);
+    color: white;
+    border: none;
+}
+
+.btn-primary:hover {
+    background: var(--secondary-color);
+    transform: translateY(-2px);
+}
+
+.btn-outline-primary {
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+    background-color: transparent;
+}
+
+/* Tables */
+.table-centered {
+    margin: 0 auto;
+    width: 50%;
+    text-align: center;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 8px;
+    text-align: center;
+    border: 1px solid rgb(226, 226, 226);
+}
+
+th {
+    background-color: var(--primary-color);
+    color: white;
+    font-weight: 500;
+    text-transform: uppercase;
+    font-size: 0.875rem;
+}
+
+.table {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+/* Modern Cards */
+.card {
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+/* Images */
+.image-container {
+    position: relative;
+}
+
+.small-image {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: transform 0.2s ease;
+}
+
+/* Modal-style large image display */
+.large-image {
+    position: fixed; /* Keep image fixed in viewport */
+    display: none;
+    max-width: 90vw; /* Limit width to 90% of viewport width */
+    max-height: 90vh; /* Limit height to 90% of viewport height */
+    width: auto;
+    height: auto;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    border: 2px solid var(--border-color);
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.3);
+    background-color: white;
+    padding: 5px;
+    border-radius: 12px;
+}
+
+/* Overlay background */
+.image-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 999;
+}
+
+/* Show large image and overlay on hover */
+.image-container:hover .large-image,
+.image-container:hover .image-overlay {
+    display: block;
+}
+
+/* Prevent body scroll when image is shown */
+body.showing-large-image {
+    overflow: hidden;
+}
+
+/* Messages */
+.error-message {
+    color: red;
+    font-size: 0.9em;
+}
+
+.success-message {
+    color: green;
+    font-size: 0.9em;
+}
+
+/* Form Controls */
+.form-control {
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    padding: 0.75rem 1rem;
+}
+
+.form-control:focus {
+    box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.25);
+}
+
+/* Actions */
+.actions a {
+    color: var(--text-muted);
+    margin: 0 0.5rem;
+    transition: color 0.2s ease;
+}
+
+.actions a:hover {
+    color: var(--primary-color);
+}
+
+/* Utilities */
+.text-center { text-align: center; }
+.mb-4 { margin-bottom: 1rem; }
+.py-5 { padding: 3rem 0; }
